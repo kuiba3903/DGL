@@ -1,7 +1,7 @@
 import bisect
 # bisect 的函数如下：
 # ['bisect', 'bisect_left', 'bisect_right', 'insort', 'insort_left', 'insort_right']
-print([i for i in dir(bisect) if i.find("__")==-1])
+[print(i) for i in dir(bisect) if i.find("__")==-1]
 a = [1,2,3,5,7,9,20,44,55,60]
 # bisect 与 bisect_right 的用法相同
 # 作用: 查找该数值将会插入的位置并返回，而不会插入。如果x存在a中则返回x右边的位置
