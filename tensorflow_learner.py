@@ -3,3 +3,4 @@ import tensorflow as tf
 print(tf.fill([1],-1))
 print(tf.fill([2,2],99))
 # 创建已知分布的张量
+print(tf.random.normal([2,2]))
