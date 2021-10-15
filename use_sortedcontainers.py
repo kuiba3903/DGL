@@ -39,6 +39,9 @@ sd = SortedDict()
 sd.setdefault('a', 1)
 sd.setdefault('b', 10)
 sd.setdefault('b', 12)
+sd.setdefault('c', 1)
+sd.setdefault('d', 10)
+sd.setdefault('e', 12)
 print(sd)
 print("-------------")
 # pop(key,default): 弹出key对应的value,如果没有则返回default,如果没有给default则报错;
@@ -47,3 +50,38 @@ print(sd.pop('k',0))# 返回默认值
 # 报错
 # print(sd.pop('z'))
 print("-------------")
+# popitem(index=-1) 从排序的字典里删除并返回索引对,index默认是-1,即字典里最后一个
+print(sd.popitem())
+print(sd)
+print("-------------")
+# get 返回字典里key对应的value,否则返回默认值None,可以指定
+print(sd.get('a',0))
+print(sd.get('b'))
+print(sd.get('b',0))
+print("-------------")
+# peekitem(index=-1):返回排序字典index处的索引对，不修改字典
+print(sd.peekitem())
+print(sd)
+print("-------------")
+
+"""
+有序不重复集合：SortedSet
+"""
+ss = SortedSet()
+# add(value):添加元素
+ss.add(1)
+ss.add(2)
+ss.add(3)
+ss.add(4)
+ss.add(3)
+print(ss)
+print("-------------")
+# discard(value):单春元素，不存在不报错
+ss.discard(3)
+print(ss)
+ss.discard(9)
+print(ss)
+print("-------------")
+# pop(index=-1):删除index处的值并返回,默认是最后一个
+print(ss.pop(1))
+print(ss)
