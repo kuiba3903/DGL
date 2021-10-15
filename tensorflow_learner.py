@@ -1,4 +1,6 @@
 import tensorflow as tf
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 # 创建自定义数值张量
 print(tf.fill([1],-1))
 print(tf.fill([2,2],99))
