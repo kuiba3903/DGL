@@ -1,5 +1,5 @@
 import tensorflow as tf
-from tensorflow.keras import layers
+from tensorflow.keras import layers,Sequential
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 x = tf.random.normal([4,28*28])
@@ -31,3 +31,14 @@ with tf.GradientTape() as tape:# 梯度记录器
     h4 = h3 @ w4 + b4
     # h4 = tf.nn.relu(h4) 最后一层是否加激活函数视情况而定
 print(h4)
+
+# 层方式实现
+# 通过 Sequential 容器封装为一个网络类
+model = Sequential([
+    layers.Dense(256,activation= tf.nn.relu),
+    layers.Dense(128,activation= tf.nn.relu),
+    layers.Dense(64,activation= tf.nn.relu),
+    layers.Dense(10,activation=None)]
+)
+output = model(x)
+print(output)
