@@ -2,7 +2,8 @@ import dgl
 import torch as th
 import networkx as nx
 import matplotlib.pyplot as plt
-
+import warnings
+warnings.filterwarnings('ignore')
 g = dgl.DGLGraph()
 g.add_nodes(10)
 # 逐条往图中添加边
@@ -19,4 +20,14 @@ g.add_edges(src, dst)
 
 plt.figure(figsize=(14, 6))
 nx.draw(g.to_networkx(), with_labels=True)
+
+
+g2 = dgl.DGLGraph()
+g2.add_nodes(10)
+src = th.tensor(list(range(1, 10)))
+g2.add_edges(src, 0)
+plt.figure(figsize=(14, 6))
+nx.draw(g.to_networkx(), with_labels=True)
+
 plt.show()
+
